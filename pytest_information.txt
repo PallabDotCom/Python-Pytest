@@ -1,0 +1,17 @@
+Pytest :
+#Enable Pytest for your project : Settings- > Tools -> Python Integrated Tools -> In the Default test runner field select pytest.
+#Run Pytest from test runner : pycharm Edit configuration + python tests + python test + browse and select test file as script path 
+#Pytest file should start with test_ or end with _test
+#Pytest method should start with test_
+#Any code should be wrapped in method only 
+# How to run from command promt ? go to project location where python files located and type py.test and hit enter. It will run all the methods and files with test_ or _test. for more information type py.test -v. For all console logs py.test -v -s. To run a specific file command is py.test filename.py -v -s. If you want to run selected testcases or methods from different file but they have common keywords (ex-creditcard) then command is py.test -k creditcard -v -s
+#Pytest overrides if there is same method name
+#All the method names should be like testcase name for better undestanding and grouping.
+#Just like cucumber tags or testng group we have mark in pytest for methods.Using this we can run selective testcases as a part of smoke or regression run. syntax- @pytest.mark.anyname .From command - py.test -k anyname -v -s
+#@pytest.mark.skip will skip the test which you don't want to run. @pytest.mark.xfail will skip the testcase from reporting but it ran.
+#Like before and after test in Java testNg, pyhton use fixtute. declare your fixture in conftest.py file and all the pytest test file under same folder can use the same fixture. You can define multiple fixtute in this file.
+#If you want to run fixture for only before and after class execution , not for all the method like above then define scope in conftest.py file.
+#When you have mutiple methods using same fixture then wrap all the methods in one class and declare fixture in class level.
+#Running test with multiple dat sets - data parameterization
+# To get the html report command is pytest --html=report.html -s . the html report will be displayed in same folder where your project is.
+#Logs : Debug , info, warning , error, critical
